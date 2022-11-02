@@ -48,17 +48,45 @@ return packer.startup(function(use)
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "folke/tokyonight.nvim"
-  
+
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/nvim-cmp"          -- The completion plugin
+  use "hrsh7th/cmp-buffer"        -- buffer completions
+  use "hrsh7th/cmp-path"          -- path completions
+  use "hrsh7th/cmp-cmdline"       -- cmdline completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
+  use "saadparwaiz1/cmp_luasnip"  -- snippet completions
 
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use "L3MON4D3/LuaSnip"              -- snippet engine
+  use "rafamadriz/friendly-snippets"  -- a bunch of snippets to use
+
+  -- LSP
+  use "neovim/nvim-lspconfig"             -- enable LSP
+  use "williamboman/mason.nvim"           -- simple to use language server installer
+  use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
+
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "p00f/nvim-ts-rainbow"  -- rainbow-brackets
+  use "windwp/nvim-autopairs" -- integrates with both cmp and treesitter
+
+  -- Telescope
+  -- use "nvim-telescope/telescope.nvim"
+  -- use 'nvim-telescope/telescope-media-files.nvim'
+
+  -- Git
+  use "lewis6991/gitsigns.nvim"
+  use "jose-elias-alvarez/null-ls.nvim"
+
+  -- Nvim-tree
+  use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-tree.lua'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

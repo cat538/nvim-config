@@ -1,6 +1,6 @@
 local options = {
-  backup = false,                          -- creates a backup file
-  swapfile = false,                        -- creates a swapfile
+  backup = false,                          -- 不创建备份文件
+  swapfile = false,                        -- 不创建swapfile
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 1,                           -- 命令行高度 
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
