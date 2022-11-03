@@ -1,10 +1,14 @@
+require "user.impatient"
 require "user.options"
 require "user.keymaps"
 require "user.plugins"
-require "user.colorscheme"
+-- require "user.autocommands"
 require "user.cmp"
-require "user.lsp"
 require "user.treesitter"
+require "user.gitsigns"
 require "user.autopairs"
-require("user.nvim-tree")
-require("user.gitsigns")
+require "user.illuminate"
+require "user.nvim-tree"
+require "user.colorscheme"
+require "user.lsp"
+require "user.comment"

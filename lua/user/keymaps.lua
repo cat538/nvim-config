@@ -75,3 +75,14 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+
+-- comment --
+-- To use forward slash: <C-_>
+vim.keymap.set('n', '<C-_>', function()
+        return vim.v.count == 0
+            and '<Plug>(comment_toggle_linewise_current)'
+            or '<Plug>(comment_toggle_linewise_count)'
+    end, { expr = true })
+
+vim.keymap.set('x', '<C-_>', '<Plug>(comment_toggle_linewise_visual)')
