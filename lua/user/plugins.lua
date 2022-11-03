@@ -49,6 +49,7 @@ return packer.startup(function(use)
   -- use "nvim-lua/popup.nvim"     -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim"     -- Useful lua functions used by lots of plugins
   use "akinsho/bufferline.nvim"   -- buffer line (with tabpage integration)
+  use "akinsho/toggleterm.nvim"   -- use outer terminal in nvim
 
   -- Colorschemes
   use "folke/tokyonight.nvim"
