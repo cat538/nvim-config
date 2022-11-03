@@ -86,3 +86,6 @@ vim.keymap.set('n', '<C-_>', function()
     end, { expr = true })
 
 vim.keymap.set('x', '<C-_>', '<Plug>(comment_toggle_linewise_visual)')
+
+-- Bufferline --
+

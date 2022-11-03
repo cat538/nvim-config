@@ -45,9 +45,10 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim"    -- Have packer manage itself
+  use "lewis6991/impatient.nvim"  -- Speed up loading Lua modules 
   -- use "nvim-lua/popup.nvim"     -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim"     -- Useful lua functions used by lots of plugins
-  use "lewis6991/impatient.nvim"  -- Speed up loading Lua modules 
+  use "akinsho/bufferline.nvim"   -- buffer line (with tabpage integration)
 
   -- Colorschemes
   use "folke/tokyonight.nvim"
