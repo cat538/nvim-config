@@ -51,6 +51,7 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim"   -- buffer line (with tabpage integration)
   use "akinsho/toggleterm.nvim"   -- use outer terminal in nvim
   use "nvim-lualine/lualine.nvim" -- bottom bar
+  use "lukas-reineke/indent-blankline.nvim" -- 
 
   -- Colorschemes
   use "folke/tokyonight.nvim"
