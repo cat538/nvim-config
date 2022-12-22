@@ -17,50 +17,51 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
+-- Move text up and down
+keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-
--- use nvim-tree instead
--- keymap("n", "<leader>e", ":Lex 30<cr>", opts)
--- Nvimtree
-keymap("n", "<C-n>", ":NvimTreeToggle<cr>", opts)
-
 -- Resize window with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Navigate buffers
+-- Nvim-tree:
+-- keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+keymap("n", "<C-n>", ":NvimTreeToggle<cr>", opts)
+
+-- Bufferline: Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
--- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
--- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
 -- navigate within insert mode
 keymap("i", "<C-h>", "<Left>", opts)
 keymap("i", "<C-l>", "<Right>", opts)
 keymap("i", "<C-k>", "<Up>", opts)
 keymap("i", "<C-j>", "<Down>", opts)
+keymap("i", "<C-e>", "<End>", opts)
+keymap("i", "<C-b>", "<Home>", opts)
+keymap("i", "<C-u>", "<Esc>O", opts)
+keymap("i", "<C-o>", "<Esc>o", opts)
+keymap("i", "<C-z>", "<C-O>u", opts)
+keymap("i", "<C-y>", "<C-O><C-R>", opts)
 
--- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
+-- Stay in indent mode
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
+
 
 -- Visual Block --
 -- Move text up and down
@@ -77,7 +78,7 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 
--- comment --
+-- Comment:
 -- To use forward slash: <C-_>
 vim.keymap.set('n', '<C-_>', function()
         return vim.v.count == 0
