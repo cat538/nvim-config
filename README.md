@@ -2,7 +2,7 @@
 
 This is my personal neovim configuration repo.
 
-This configuration is based on (LunarVim/nvim-basic-ide)[https://github.com/LunarVim/nvim-basic-ide]
+This configuration is based on [LunarVim/nvim-basic-ide](https://github.com/LunarVim/nvim-basic-ide)
 
 ## Uninstall this config
 ```bash
