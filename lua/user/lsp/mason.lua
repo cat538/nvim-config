@@ -1,13 +1,11 @@
 local servers = {
 	"sumneko_lua",
-	"cssls",
-	"html",
-	"tsserver",
 	"pyright",
-	"bashls",
-	"jsonls",
-	"yamlls",
+	"clangd",
+  "cmake",
+  "rust_analyzer",
 }
+
 
 local settings = {
 	ui = {
@@ -48,5 +46,38 @@ for _, server in pairs(servers) do
 		opts = vim.tbl_deep_extend("force", conf_opts, opts)
 	end
 
+  if server == "rust_analyzer" then
+    require("rust-tools").setup {
+      -- rust-tools options
+      tools = {
+        inlay_hints = { auto = false }, -- automatically set inlay hints (type hints) default: true
+        on_initialized = function()
+          vim.cmd [[
+            autocmd BufEnter,CursorHold,InsertLeave,BufWritePost *.rs silent! lua vim.lsp.codelens.refresh()
+          ]]
+        end,
+      },
+
+      -- rust-analyzer options
+      server = {
+        on_attach = require("user.lsp.handlers").on_attach,
+        capabilities = require("user.lsp.handlers").capabilities,
+        settings = {
+          ["rust-analyzer"] = {
+            lens = {
+              enable = true,
+            },
+            checkOnSave = {
+              command = "clippy",
+            },
+          },
+        },
+      },
+    }
+
+    goto continue
+  end
+
 	lspconfig[server].setup(opts)
+  ::continue::
 end

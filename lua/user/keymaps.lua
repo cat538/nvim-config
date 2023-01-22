@@ -33,10 +33,28 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Clear highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+keymap("n", "<ESC>", "<cmd>nohlsearch<CR>", opts)
+
+-- Save current file
+keymap("n", "<C-s>", "<cmd>w<CR>")
 
 -- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<leader>x", "<cmd>Bdelete!<CR>", opts)
+
+-- navigate within insert mode
+keymap("i", "<C-h>", "<Left>", opts)
+keymap("i", "<C-l>", "<Right>", opts)
+keymap("i", "<C-k>", "<Up>", opts)
+keymap("i", "<C-j>", "<Down>", opts)
+keymap("i", "<C-e>", "<End>", opts)
+keymap("i", "<C-b>", "<Home>", opts)
+keymap("i", "<C-u>", "<Esc>O", opts)
+keymap("i", "<C-o>", "<Esc>o", opts)
+keymap("i", "<C-z>", "<C-O>u", opts)
+keymap("i", "<C-y>", "<C-O><C-R>", opts)
+
+-- Save current file in insert_mode 
+keymap("i", "<C-s>", "<cmd>w<CR>")
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
