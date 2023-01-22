@@ -73,6 +73,11 @@ keymap("v", ">", ">gv", opts)
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
+-- NvToggleTerm
+keymap("n", "<C-_>", ":ToggleTerm direction=horizontal<CR>")
+keymap("t", "<C-_>", "<cmd>ToggleTerm direction=horizontal<CR>")
+
+
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
