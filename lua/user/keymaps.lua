@@ -68,6 +68,14 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+-- Move text
+keymap("n" , "<A-j>", ":m .+1<CR>==",opts)
+keymap("n" , "<A-k>", ":m .-2<CR>==",opts)
+keymap("i" , "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+keymap("i" , "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+keymap("v" , "<A-j>", ":m '>+1<CR>gv=gv", opts)
+keymap("v" , "<A-k>", ":m '<-2<CR>gv=gv", opts)
+
 -- Plugins --
 
 -- NvimTree
