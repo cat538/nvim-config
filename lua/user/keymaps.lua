@@ -16,6 +16,20 @@ vim.g.mapleader = " "
 --   command_mode = "c",
 
 -- Normal --
+-- Move cursor
+function vcountfunc(k)
+  return ((vim.v.count == 0) and ('g' .. k)) or k
+end
+keymap('','j', function() return vcountfunc('j') end,{ noremap = true, silent = true, expr = true })
+keymap('','k', function() return vcountfunc('k') end,{ noremap = true, silent = true, expr = true })
+
+-- <Home> and <End> within normal_mode and visual_mode
+keymap("n", "9", "^", opts)
+keymap("n", "0", "$", opts)
+keymap("v", "9", "^", opts)
+keymap("v", "0", "$", opts)
+
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -33,7 +47,7 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Clear highlights
-keymap("n", "<ESC>", "<cmd>nohlsearch<CR>", opts)
+keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Save current file
 keymap("n", "<C-s>", "<cmd>w<CR>")
@@ -82,8 +96,8 @@ keymap("v" , "<A-k>", ":m '<-2<CR>gv=gv", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- NvToggleTerm
-keymap("n", "<C-_>", ":ToggleTerm direction=horizontal<CR>")
-keymap("t", "<C-_>", "<cmd>ToggleTerm direction=horizontal<CR>")
+-- keymap("n", "<C-_>", ":ToggleTerm direction=horizontal<CR>")
+-- keymap("t", "<C-_>", "<cmd>ToggleTerm direction=horizontal<CR>")
 
 
 -- Telescope
@@ -93,7 +107,7 @@ keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+-- keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
