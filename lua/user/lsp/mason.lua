@@ -2,8 +2,8 @@ local servers = {
 	"sumneko_lua",
 	"pyright",
 	"clangd",
-  "cmake",
-  "rust_analyzer",
+  -- "cmake",
+  -- "rust_analyzer",
 }
 
 
